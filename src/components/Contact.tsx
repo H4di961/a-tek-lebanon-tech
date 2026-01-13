@@ -12,7 +12,7 @@ const Contact = () => {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <a
-              href="https://wa.me/961XXXXXXXX"
+              href="https://wa.me/96103655768"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-4 bg-card p-5 rounded-xl border border-border hover:border-primary hover:shadow-md transition-all group"
@@ -22,12 +22,12 @@ const Contact = () => {
               </div>
               <div className="text-left">
                 <p className="font-medium text-foreground group-hover:text-primary transition-colors">WhatsApp</p>
-                <p className="text-sm text-muted-foreground">+961 XX XXX XXX</p>
+                <p className="text-sm text-muted-foreground">03 655 768</p>
               </div>
             </a>
             
             <a
-              href="mailto:info@a-tek.com"
+              href="mailto:sales@atekleb.com"
               className="flex items-center gap-4 bg-card p-5 rounded-xl border border-border hover:border-primary hover:shadow-md transition-all group"
             >
               <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
@@ -35,7 +35,7 @@ const Contact = () => {
               </div>
               <div className="text-left">
                 <p className="font-medium text-foreground group-hover:text-primary transition-colors">Email</p>
-                <p className="text-sm text-muted-foreground">info@a-tek.com</p>
+                <p className="text-sm text-muted-foreground">sales@atekleb.com</p>
               </div>
             </a>
             
