@@ -1,25 +1,29 @@
 import { Card, CardContent } from "@/components/ui/card";
+import productCamera from "@/assets/product-camera.png";
+import productSmartBulb from "@/assets/product-smart-bulb.png";
+import productLedFixture from "@/assets/product-led-fixture.png";
+import productSurveillance from "@/assets/product-surveillance.png";
 
 const products = [
   {
     title: "Home Security Cameras",
     description: "Indoor and outdoor surveillance systems",
-    image: "/placeholder.svg",
+    image: productCamera,
   },
   {
     title: "Smart Lighting",
     description: "WiFi-enabled bulbs and fixtures",
-    image: "/placeholder.svg",
+    image: productSmartBulb,
   },
   {
     title: "LED Light Fixtures",
     description: "Energy-efficient home lighting",
-    image: "/placeholder.svg",
+    image: productLedFixture,
   },
   {
     title: "Surveillance Systems",
     description: "Complete security packages",
-    image: "/placeholder.svg",
+    image: productSurveillance,
   },
 ];
 
@@ -35,11 +39,11 @@ const Products = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
           {products.map((product, index) => (
             <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="aspect-square bg-muted flex items-center justify-center">
+              <div className="aspect-square bg-muted flex items-center justify-center overflow-hidden">
                 <img
                   src={product.image}
                   alt={product.title}
-                  className="w-16 h-16 opacity-50"
+                  className="w-full h-full object-cover"
                 />
               </div>
               <CardContent className="p-4">
