@@ -5,11 +5,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent } from "@/components/ui/card";
-import { Lightbulb, Cable, Zap, Wind, Wrench, Tv, ImageIcon } from "lucide-react";
+import { Lightbulb, Cable, Zap, Wind, Wrench, Tv } from "lucide-react";
+
+// Import all product images
+import lightBulbs from "@/assets/products/light-bulbs.png";
+import outdoorLedLuminaire from "@/assets/products/outdoor-led-luminaire.png";
+import ledFloodLight from "@/assets/products/led-flood-light.png";
+import ledBatten from "@/assets/products/led-batten.png";
+import recessedSpotlight from "@/assets/products/recessed-spotlight.png";
+import lampHolder from "@/assets/products/lamp-holder.png";
+import ledDriver from "@/assets/products/led-driver.png";
+import pvcCable from "@/assets/products/pvc-cable.png";
+import electricalCables from "@/assets/products/electrical-cables.png";
+import hdmiCable from "@/assets/products/hdmi-cable.png";
+import cableManagement from "@/assets/products/cable-management.png";
+import flexibleConduit from "@/assets/products/flexible-conduit.png";
+import thermalRelay from "@/assets/products/thermal-relay.png";
+import lightSwitch from "@/assets/products/light-switch.png";
+import extension from "@/assets/products/extension.png";
+import voltageProtection from "@/assets/products/voltage-protection.png";
+import transformer from "@/assets/products/transformer.png";
+import powerAdapter from "@/assets/products/power-adapter.png";
+import boxFan from "@/assets/products/box-fan.png";
+import vent from "@/assets/products/vent.png";
+import solderingIron from "@/assets/products/soldering-iron.png";
+import networkTool from "@/assets/products/network-tool.png";
+import ups from "@/assets/products/ups.png";
+import satelliteReceiver from "@/assets/products/satellite-receiver.png";
+import ringBell from "@/assets/products/ring-bell.png";
 
 type Product = {
   name: string;
-  image?: string;
+  image: string;
 };
 
 type ProductCategory = {
@@ -25,13 +52,13 @@ const productCategories: ProductCategory[] = [
     title: "Lighting",
     icon: <Lightbulb className="h-5 w-5" />,
     products: [
-      { name: "Light Bulbs" },
-      { name: "Outdoor LED Luminaire" },
-      { name: "LED Flood Lights" },
-      { name: "LED Battens" },
-      { name: "Mini Recessed Spotlights" },
-      { name: "Lamp Holder" },
-      { name: "100W Driver Megaman" },
+      { name: "Light Bulbs", image: lightBulbs },
+      { name: "Outdoor LED Luminaire", image: outdoorLedLuminaire },
+      { name: "LED Flood Lights", image: ledFloodLight },
+      { name: "LED Battens", image: ledBatten },
+      { name: "Mini Recessed Spotlights", image: recessedSpotlight },
+      { name: "Lamp Holder", image: lampHolder },
+      { name: "100W Driver Megaman", image: ledDriver },
     ],
   },
   {
@@ -39,11 +66,11 @@ const productCategories: ProductCategory[] = [
     title: "Cables & Wiring",
     icon: <Cable className="h-5 w-5" />,
     products: [
-      { name: "PVC Cable" },
-      { name: "Electrical Cables" },
-      { name: "HDMI Cables" },
-      { name: "Cable Management Systems" },
-      { name: "Flexible Conduit Spiraled Sheath" },
+      { name: "PVC Cable", image: pvcCable },
+      { name: "Electrical Cables", image: electricalCables },
+      { name: "HDMI Cables", image: hdmiCable },
+      { name: "Cable Management Systems", image: cableManagement },
+      { name: "Flexible Conduit Spiraled Sheath", image: flexibleConduit },
     ],
   },
   {
@@ -51,12 +78,12 @@ const productCategories: ProductCategory[] = [
     title: "Electrical Components",
     icon: <Zap className="h-5 w-5" />,
     products: [
-      { name: "Thermal Overload Relay" },
-      { name: "Light Switches" },
-      { name: "Extension" },
-      { name: "Voltage Protection" },
-      { name: "Universal Transformer" },
-      { name: "Power Adapter" },
+      { name: "Thermal Overload Relay", image: thermalRelay },
+      { name: "Light Switches", image: lightSwitch },
+      { name: "Extension", image: extension },
+      { name: "Voltage Protection", image: voltageProtection },
+      { name: "Universal Transformer", image: transformer },
+      { name: "Power Adapter", image: powerAdapter },
     ],
   },
   {
@@ -64,8 +91,8 @@ const productCategories: ProductCategory[] = [
     title: "Ventilation",
     icon: <Wind className="h-5 w-5" />,
     products: [
-      { name: "Box Fan" },
-      { name: "Vents" },
+      { name: "Box Fan", image: boxFan },
+      { name: "Vents", image: vent },
     ],
   },
   {
@@ -73,8 +100,8 @@ const productCategories: ProductCategory[] = [
     title: "Tools & Equipment",
     icon: <Wrench className="h-5 w-5" />,
     products: [
-      { name: "Soldering Iron" },
-      { name: "Network Tool" },
+      { name: "Soldering Iron", image: solderingIron },
+      { name: "Network Tool", image: networkTool },
     ],
   },
   {
@@ -82,9 +109,9 @@ const productCategories: ProductCategory[] = [
     title: "Electronics & Home",
     icon: <Tv className="h-5 w-5" />,
     products: [
-      { name: "Multi Function UPS" },
-      { name: "Digital Satellite Receiver" },
-      { name: "Ring Bell" },
+      { name: "Multi Function UPS", image: ups },
+      { name: "Digital Satellite Receiver", image: satelliteReceiver },
+      { name: "Ring Bell", image: ringBell },
     ],
   },
 ];
@@ -119,16 +146,12 @@ const Products = () => {
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 pt-2">
                     {category.products.map((product, index) => (
                       <Card key={index} className="overflow-hidden hover:shadow-md transition-shadow">
-                        <div className="aspect-square bg-muted flex items-center justify-center">
-                          {product.image ? (
-                            <img
-                              src={product.image}
-                              alt={product.name}
-                              className="w-full h-full object-cover"
-                            />
-                          ) : (
-                            <ImageIcon className="h-12 w-12 text-muted-foreground/40" />
-                          )}
+                        <div className="aspect-square bg-muted flex items-center justify-center overflow-hidden">
+                          <img
+                            src={product.image}
+                            alt={product.name}
+                            className="w-full h-full object-cover"
+                          />
                         </div>
                         <CardContent className="p-3">
                           <h3 className="font-medium text-sm text-foreground text-center">
