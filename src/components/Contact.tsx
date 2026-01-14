@@ -22,7 +22,7 @@ const Contact = () => {
               </div>
               <div className="text-left">
                 <p className="font-medium text-foreground group-hover:text-primary transition-colors">WhatsApp</p>
-                <p className="text-sm text-muted-foreground">03 655 768</p>
+                <p className="text-sm text-muted-foreground">79 362 800</p>
               </div>
             </a>
             
